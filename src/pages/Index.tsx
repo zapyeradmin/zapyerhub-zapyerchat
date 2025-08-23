@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import StatisticsSection from '@/components/StatisticsSection';
-import ConvertSection from '@/components/ConvertSection';
-import AutomationSection from '@/components/AutomationSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import ComparisonSection from '@/components/ComparisonSection';
+import InteractiveHeroSection from '@/components/InteractiveHeroSection';
+import AboutSection from '@/components/AboutSection';
+import TimelineSection from '@/components/TimelineSection';
+import EnhancedStatisticsSection from '@/components/EnhancedStatisticsSection';
+import EnhancedFeaturesSection from '@/components/EnhancedFeaturesSection';
+import IntegrationsSection from '@/components/IntegrationsSection';
 import PricingSection from '@/components/PricingSection';
-import FAQSection from '@/components/FAQSection';
+import YouTubeShortsSection from '@/components/YouTubeShortsSection';
+import AIFAQSection from '@/components/AIFAQSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -50,14 +51,15 @@ const Index = () => {
     <div className="min-h-screen bg-background smooth-scroll">
       <Header />
       <main>
-        <HeroSection />
-        <StatisticsSection />
-        <ConvertSection />
-        <AutomationSection />
-        <FeaturesSection />
-        <ComparisonSection />
+        <InteractiveHeroSection />
+        <AboutSection />
+        <TimelineSection />
+        <EnhancedStatisticsSection />
+        <EnhancedFeaturesSection />
+        <IntegrationsSection />
         <PricingSection />
-        <FAQSection />
+        <YouTubeShortsSection />
+        <AIFAQSection />
       </main>
       <Footer />
     </div>

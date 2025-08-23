@@ -2,78 +2,65 @@ import { Check, Star, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const PricingSection = () => {
-  const plans = [
+const plans = [
     {
-      name: 'Plano Starter',
-      price: '197,00',
+      name: 'Plano Zap Chat',
+      price: '149',
       period: '/mês',
-      description: 'Perfeito para pequenos negócios que estão começando',
+      description: 'Ideal para pequenos negócios e equipes enxutas.',
       popular: false,
       features: [
-        'Até 1.000 mensagens/mês',
-        'Automação básica de respostas',
-        'Integração com WhatsApp Business',
-        'Relatórios básicos',
-        'Suporte por chat',
-        'Templates de mensagens',
-        'Backup automático',
-        'Gestão de até 500 contatos'
+        'Conecte até 2 número WhatsApp',
+        'Cadastre até 8 Usuários/Atendentes',
+        'Sem Limites de mensagens',
+        'Cadastre até 8 Setores/Filas',
+        'Chatbot ilimitado',
+        'Atendentes Simultâneos',
+        'Sistema Kanban integrado',
+        'Cadastre Tags aos seus Leads',
+        'Chat Interno Liberado',
+        'Cadastre Clientes a sua carteira',
+        'Agendamento de Mensagens',
+        'Cadastre Respostas Rápidas',
+        'Suporte Técnico'
       ],
       color: 'border-border/20',
       bgColor: 'bg-card',
       textColor: 'text-foreground'
     },
     {
-      name: 'Plano Scale',
-      price: '297,00',
+      name: 'Plano Smart Chat',
+      price: '249',
       period: '/mês',
-      description: 'Mais popular para empresas em crescimento',
+      description: 'Para empresas que desejam escalar e automatizar.',
       popular: true,
       features: [
-        'Até 5.000 mensagens/mês',
-        'Automação avançada com IA',
-        'CRM integrado completo',
-        'Relatórios avançados e analytics',
-        'Suporte prioritário 24/7',
-        'Campanhas de remarketing',
-        'Integração com ferramentas de pagamento',
-        'Gestão ilimitada de contatos',
-        'A/B testing de mensagens',
-        'Webhook personalizado',
-        'Segmentação avançada'
+        'Conecte até 5 número WhatsApp',
+        'Conexão com API Oficial da Meta*',
+        'Cadastre até 15 Usuários/Atendentes',
+        'Sem Limites de mensagens',
+        'Cadastre até 15 Setores/Filas',
+        'Integração com Chat GPT*',
+        'Integrações Liberadas',
+        'Integração API',
+        'Construtor de Fluxos',
+        'Chatbot ilimitado',
+        'Atendentes Simultâneos',
+        'Sistema Kanban integrado',
+        'Agendamento de Mensagens',
+        'Envio de Campanhas',
+        'Configuração e ajustes Incluso',
+        'Treinamento para sua equipe',
+        'Suporte Prioritário Especial'
       ],
       color: 'border-primary',
       bgColor: 'bg-primary',
       textColor: 'text-white'
-    },
-    {
-      name: 'Plano Pro',
-      price: '497,00',
-      period: '/mês',
-      description: 'Para empresas que precisam de máxima performance',
-      popular: false,
-      features: [
-        'Mensagens ilimitadas',
-        'IA personalizada para seu negócio',
-        'Integração com múltiplas ferramentas',
-        'Dashboard executivo completo',
-        'Gerente de conta dedicado',
-        'Treinamento personalizado',
-        'API completa para integrações',
-        'Backup em tempo real',
-        'Compliance LGPD premium',
-        'Relatórios personalizados',
-        'Suporte via WhatsApp',
-        'Onboarding premium'
-      ],
-      color: 'border-border/20',
-      bgColor: 'bg-card',
-      textColor: 'text-foreground'
     }
   ];
 
   return (
-    <section id="precos" className="py-20 bg-background">
+    <section id="pricing" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -88,7 +75,7 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -165,6 +152,11 @@ const PricingSection = () => {
             </div>
           ))}
         </div>
+
+        {/* API Costs Notice */}
+        <p className="text-center text-muted-foreground mt-8 text-sm">
+          *Custos com a API da OpenAI (tokens) são de responsabilidade do contratante.
+        </p>
 
         {/* Bottom Section */}
         <div className="mt-16 text-center">
