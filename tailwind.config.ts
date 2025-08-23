@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				whatsapp: {
+					DEFAULT: 'hsl(var(--whatsapp-green))',
+					hover: 'hsl(var(--whatsapp-green-hover))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +92,65 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px) rotate(-2deg)' },
+					'50%': { transform: 'translateY(-20px) rotate(2deg)' }
+				},
+				'typing': {
+					'from': { width: '0' },
+					'to': { width: '100%' }
+				},
+				'blink-caret': {
+					'from, to': { borderColor: 'transparent' },
+					'50%': { borderColor: 'hsl(var(--whatsapp-green))' }
+				},
+				'fadeInUp': {
+					'to': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fadeInLeft': {
+					'to': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'fadeInRight': {
+					'to': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'scaleIn': {
+					'to': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'pulse-green': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'gradient-shift': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'typing': 'typing 3s steps(40, end)',
+				'blink-caret': 'blink-caret 0.75s step-end infinite',
+				'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+				'fade-in-left': 'fadeInLeft 0.6s ease-out forwards',
+				'fade-in-right': 'fadeInRight 0.6s ease-out forwards',
+				'scale-in': 'scaleIn 0.5s ease-out forwards',
+				'pulse-green': 'pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'gradient-shift': 'gradient-shift 15s ease infinite'
 			}
 		}
 	},
