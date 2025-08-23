@@ -62,8 +62,6 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  }
   
   /* Custom gradients and backgrounds */
   .hero-gradient {
@@ -266,7 +264,6 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
 }
 
 @layer base {
