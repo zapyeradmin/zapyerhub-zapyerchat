@@ -2,47 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Zapyer Hub Design System - WhatsApp Automated Sales Platform */
+/* Zapyer Chat - Futuristic Tech Design System */
 
 @layer base {
   :root {
-    /* Zapyer Hub Color Scheme */
-    --background: 201 18% 11%; /* #111b21 */
-    --foreground: 0 0% 86%; /* #dcdcdc */
+    /* Cyber Tech Color Scheme */
+    --background: 240 15% 4%; /* #0a0a0f - Deep space blue */
+    --foreground: 0 0% 98%; /* #fafafa - Pure white */
     
-    --card: 164 24% 16%; /* #1a352a */
-    --card-foreground: 0 0% 86%; /* #dcdcdc */
+    --card: 240 20% 8%; /* #111218 - Dark card */
+    --card-foreground: 0 0% 95%; /* #f2f2f2 */
     
-    --popover: 164 24% 16%; /* #1a352a */
-    --popover-foreground: 0 0% 86%; /* #dcdcdc */
+    --popover: 240 20% 8%; /* #111218 */
+    --popover-foreground: 0 0% 95%; /* #f2f2f2 */
     
-    --primary: 142 46% 23%; /* #24954a */
-    --primary-foreground: 0 0% 100%; /* #ffffff */
+    --primary: 145 100% 55%; /* #00ff88 - Neon green */
+    --primary-foreground: 240 15% 4%; /* #0a0a0f */
     
-    --secondary: 164 24% 16%; /* #1a352a */
-    --secondary-foreground: 0 0% 86%; /* #dcdcdc */
+    --secondary: 215 100% 55%; /* #0066ff - Cyber blue */
+    --secondary-foreground: 0 0% 98%; /* #fafafa */
     
-    --muted: 0 0% 78%; /* #c6c6c6 */
-    --muted-foreground: 0 0% 78%; /* #c6c6c6 */
+    --accent: 320 100% 60%; /* #ff0066 - Tech pink */
+    --accent-foreground: 0 0% 98%; /* #fafafa */
     
-    --accent: 142 46% 23%; /* #24954a */
-    --accent-foreground: 0 0% 100%; /* #ffffff */
+    --muted: 240 5% 20%; /* #323238 */
+    --muted-foreground: 240 5% 65%; /* #a1a1a6 */
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
     
-    --border: 142 46% 23%; /* #24954a */
-    --input: 164 24% 16%; /* #1a352a */
-    --ring: 142 46% 23%; /* #24954a */
+    --border: 145 100% 55%; /* #00ff88 - Neon green border */
+    --input: 240 20% 8%; /* #111218 */
+    --ring: 145 100% 55%; /* #00ff88 */
     
-    --success: 142 46% 23%; /* #24954a */
-    --success-foreground: 0 0% 100%;
+    --success: 145 100% 55%; /* #00ff88 */
+    --success-foreground: 240 15% 4%;
     
-    --whatsapp-green: 142 46% 23%; /* #24954a */
-    --whatsapp-green-hover: 142 46% 28%; /* Slightly lighter */
+    /* WhatsApp Official Colors */
+    --whatsapp-green: 142 70% 49%; /* #25d366 */
+    --whatsapp-green-hover: 142 70% 54%;
+    --whatsapp-dark: 200 20% 13%; /* #1e2428 */
+    --whatsapp-darker: 200 25% 8%; /* #0b141a */
+    --whatsapp-user-bubble: 185 100% 15%; /* #005c4b */
+    --whatsapp-bot-bubble: 200 15% 20%; /* #2a2f32 */
     
-    --hero-gradient-start: 201 18% 11%; /* #111b21 */
-    --hero-gradient-end: 164 24% 16%; /* #1a352a */
+    /* Tech Gradients */
+    --cyber-gradient: linear-gradient(135deg, hsl(145 100% 55%) 0%, hsl(215 100% 55%) 100%);
+    --matrix-gradient: linear-gradient(180deg, hsl(240 15% 4%) 0%, hsl(240 20% 8%) 100%);
+    --neon-glow: 0 0 20px hsl(145 100% 55% / 0.5);
     
     --radius: 0.75rem;
 
@@ -63,13 +70,67 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   
-  /* Custom gradients and backgrounds */
-  .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
+  /* Cyber Tech Gradients and Backgrounds */
+  .cyber-gradient {
+    background: var(--cyber-gradient);
+  }
+  
+  .matrix-gradient {
+    background: var(--matrix-gradient);
+  }
+  
+  .tech-glow {
+    box-shadow: var(--neon-glow);
   }
   
   .whatsapp-gradient {
     background: linear-gradient(135deg, hsl(var(--whatsapp-green)), hsl(var(--whatsapp-green-hover)));
+  }
+  
+  /* Matrix Digital Rain Effect */
+  .matrix-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .matrix-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(90deg, transparent 0%, hsl(145 100% 55% / 0.05) 50%, transparent 100%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        hsl(145 100% 55% / 0.03) 2px,
+        hsl(145 100% 55% / 0.03) 4px
+      );
+    animation: matrix-scan 3s linear infinite;
+    pointer-events: none;
+  }
+  
+  /* Glassmorphism Effects */
+  .glass-card {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    box-shadow: 
+      0 8px 32px hsl(0 0% 0% / 0.3),
+      inset 0 1px 0 hsl(145 100% 55% / 0.1);
+  }
+  
+  .glass-card:hover {
+    background: hsl(var(--card) / 0.9);
+    border-color: hsl(var(--primary) / 0.6);
+    box-shadow: 
+      0 16px 64px hsl(0 0% 0% / 0.4),
+      0 0 40px hsl(var(--primary) / 0.2),
+      inset 0 1px 0 hsl(145 100% 55% / 0.2);
+    transform: translateY(-4px);
   }
 }
 
@@ -272,6 +333,22 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Scrollbar Styling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Text Selection */
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
   }
 }

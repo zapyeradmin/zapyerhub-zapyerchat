@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
-import InteractiveHeroSection from '@/components/InteractiveHeroSection';
+import TechBackground from '@/components/TechBackground';
+import EnhancedInteractiveHeroSection from '@/components/EnhancedInteractiveHeroSection';
 import AboutSection from '@/components/AboutSection';
 import TimelineSection from '@/components/TimelineSection';
 import EnhancedStatisticsSection from '@/components/EnhancedStatisticsSection';
@@ -8,7 +9,7 @@ import EnhancedFeaturesSection from '@/components/EnhancedFeaturesSection';
 import IntegrationsSection from '@/components/IntegrationsSection';
 import PricingSection from '@/components/PricingSection';
 import YouTubeShortsSection from '@/components/YouTubeShortsSection';
-import AIFAQSection from '@/components/AIFAQSection';
+import FuturisticAIFAQSection from '@/components/FuturisticAIFAQSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -48,10 +49,11 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background smooth-scroll">
+    <div className="min-h-screen bg-background smooth-scroll relative font-sans">
+      <TechBackground />
       <Header />
-      <main>
-        <InteractiveHeroSection />
+      <main className="relative z-10">
+        <EnhancedInteractiveHeroSection />
         <AboutSection />
         <TimelineSection />
         <EnhancedStatisticsSection />
@@ -59,7 +61,7 @@ const Index = () => {
         <IntegrationsSection />
         <PricingSection />
         <YouTubeShortsSection />
-        <AIFAQSection />
+        <FuturisticAIFAQSection />
       </main>
       <Footer />
     </div>
