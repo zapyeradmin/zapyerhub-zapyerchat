@@ -1,66 +1,28 @@
 import { Check, Star, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const PricingSection = () => {
-const plans = [
-    {
-      name: 'Plano Zap Chat',
-      price: '149',
-      period: '/mês',
-      description: 'Ideal para pequenos negócios e equipes enxutas.',
-      popular: false,
-      features: [
-        'Conecte até 2 número WhatsApp',
-        'Cadastre até 8 Usuários/Atendentes',
-        'Sem Limites de mensagens',
-        'Cadastre até 8 Setores/Filas',
-        'Chatbot ilimitado',
-        'Atendentes Simultâneos',
-        'Sistema Kanban integrado',
-        'Cadastre Tags aos seus Leads',
-        'Chat Interno Liberado',
-        'Cadastre Clientes a sua carteira',
-        'Agendamento de Mensagens',
-        'Cadastre Respostas Rápidas',
-        'Suporte Técnico'
-      ],
-      color: 'border-border/20',
-      bgColor: 'bg-card',
-      textColor: 'text-foreground'
-    },
-    {
-      name: 'Plano Smart Chat',
-      price: '249',
-      period: '/mês',
-      description: 'Para empresas que desejam escalar e automatizar.',
-      popular: true,
-      features: [
-        'Conecte até 5 número WhatsApp',
-        'Conexão com API Oficial da Meta*',
-        'Cadastre até 15 Usuários/Atendentes',
-        'Sem Limites de mensagens',
-        'Cadastre até 15 Setores/Filas',
-        'Integração com Chat GPT*',
-        'Integrações Liberadas',
-        'Integração API',
-        'Construtor de Fluxos',
-        'Chatbot ilimitado',
-        'Atendentes Simultâneos',
-        'Sistema Kanban integrado',
-        'Agendamento de Mensagens',
-        'Envio de Campanhas',
-        'Configuração e ajustes Incluso',
-        'Treinamento para sua equipe',
-        'Suporte Prioritário Especial'
-      ],
-      color: 'border-primary',
-      bgColor: 'bg-primary',
-      textColor: 'text-white'
-    }
-  ];
-
-  return (
-    <section id="pricing" className="py-20 bg-background">
+  const plans = [{
+    name: 'Plano Zap Chat',
+    price: '149',
+    period: '/mês',
+    description: 'Ideal para pequenos negócios e equipes enxutas.',
+    popular: false,
+    features: ['Conecte até 2 número WhatsApp', 'Cadastre até 8 Usuários/Atendentes', 'Sem Limites de mensagens', 'Cadastre até 8 Setores/Filas', 'Chatbot ilimitado', 'Atendentes Simultâneos', 'Sistema Kanban integrado', 'Cadastre Tags aos seus Leads', 'Chat Interno Liberado', 'Cadastre Clientes a sua carteira', 'Agendamento de Mensagens', 'Cadastre Respostas Rápidas', 'Suporte Técnico'],
+    color: 'border-border/20',
+    bgColor: 'bg-card',
+    textColor: 'text-foreground'
+  }, {
+    name: 'Plano Smart Chat',
+    price: '249',
+    period: '/mês',
+    description: 'Para empresas que desejam escalar e automatizar.',
+    popular: true,
+    features: ['Conecte até 5 número WhatsApp', 'Conexão com API Oficial da Meta*', 'Cadastre até 15 Usuários/Atendentes', 'Sem Limites de mensagens', 'Cadastre até 15 Setores/Filas', 'Integração com Chat GPT*', 'Integrações Liberadas', 'Integração API', 'Construtor de Fluxos', 'Chatbot ilimitado', 'Atendentes Simultâneos', 'Sistema Kanban integrado', 'Agendamento de Mensagens', 'Envio de Campanhas', 'Configuração e ajustes Incluso', 'Treinamento para sua equipe', 'Suporte Prioritário Especial'],
+    color: 'border-primary',
+    bgColor: 'bg-primary',
+    textColor: 'text-white'
+  }];
+  return <section id="pricing" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -76,21 +38,16 @@ const plans = [
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`pricing-card ${plan.popular ? 'pricing-card-featured' : ''} rounded-3xl p-8 relative ${plan.bgColor} border-2 ${plan.color}`}
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
+          {plans.map((plan, index) => <div key={index} className={`pricing-card ${plan.popular ? 'pricing-card-featured' : ''} rounded-3xl p-8 relative ${plan.bgColor} border-2 ${plan.color}`} style={{
+          animationDelay: `${index * 150}ms`
+        }}>
               {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-white rounded-full px-6 py-2 flex items-center space-x-2 shadow-lg">
                     <Star className="h-4 w-4 text-primary fill-current" />
                     <span className="text-primary font-bold text-sm">MAIS POPULAR</span>
                   </div>
-                </div>
-              )}
+                </div>}
 
               {/* Plan Header */}
               <div className="text-center mb-8">
@@ -115,42 +72,27 @@ const plans = [
 
               {/* Features List */}
               <div className="space-y-4 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-start">
+                {plan.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-start">
                     <Check className={`h-5 w-5 mr-3 mt-0.5 flex-shrink-0 ${plan.popular ? 'text-white' : 'text-primary'}`} />
                     <span className={`${plan.popular ? 'text-white/90' : 'text-muted-foreground'}`}>
                       {feature}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* CTA Button */}
               <div className="mt-auto">
-                <Button
-                  className={`w-full py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 ${
-                    plan.popular
-                      ? 'bg-white text-primary hover:bg-white/90'
-                      : 'btn-whatsapp'
-                  }`}
-                >
-                  {plan.popular ? (
-                    <>
+                <Button className={`w-full py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 ${plan.popular ? 'bg-white text-primary hover:bg-white/90' : 'btn-whatsapp'}`}>
+                  {plan.popular ? <>
                       <Zap className="mr-2 h-5 w-5" />
                       Começar Agora
-                    </>
-                  ) : (
-                    'Escolher Plano'
-                  )}
+                    </> : 'Escolher Plano'}
                 </Button>
               </div>
 
               {/* Glow Effect for Popular Plan */}
-              {plan.popular && (
-                <div className="absolute inset-0 bg-primary/20 blur-3xl -z-10 rounded-3xl"></div>
-              )}
-            </div>
-          ))}
+              {plan.popular && <div className="absolute inset-0 blur-3xl -z-10 rounded-3xl bg-emerald-700"></div>}
+            </div>)}
         </div>
 
         {/* API Costs Notice */}
@@ -192,8 +134,6 @@ const plans = [
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PricingSection;
